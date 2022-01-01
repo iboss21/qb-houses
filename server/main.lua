@@ -1,3 +1,4 @@
+-------------
 local QBCore = exports['qb-core']:GetCoreObject()
 local houseowneridentifier = {}
 local houseownercid = {}
@@ -81,6 +82,11 @@ QBCore.Commands.Add("addgarage", "Add House Garage (Real Estate Only)", {}, fals
     else
         TriggerClientEvent('QBCore:Notify', src, "Only realestate can use this command", "error")
     end
+end)
+
+QBCore.Commands.Add("enter", "Enter House", {}, false, function(source)
+    local src = source
+    TriggerClientEvent('qb-houses:client:EnterHouse', src)
 end)
 
 QBCore.Commands.Add("ring", "Ring The Doorbell", {}, false, function(source)

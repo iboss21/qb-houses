@@ -1,3 +1,4 @@
+------------
 QBCore = exports['qb-core']:GetCoreObject()
 IsInside = false
 ClosestHouse = nil
@@ -1132,7 +1133,8 @@ RegisterNetEvent('qb-houses:client:ChangeOutfit', function()
     local outfitLoc = vector3(outfitLocation.x, outfitLocation.y, outfitLocation.z)
     if CheckDistance(outfitLoc, 1.5) then
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "Clothes1", 0.4)
-        TriggerEvent('qb-clothing:client:openOutfitMenu')
+        --TriggerEvent('qb-clothing:client:openOutfitMenu')
+        TriggerEvent('cui_wardrobe:open')
     end
 end)
 
